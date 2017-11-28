@@ -23,6 +23,13 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	/**
+	 * 手机端登录验证
+	 * @param data
+	 * @return
+	 * @throws ParseException
+	 * @throws IOException
+	 */
     @RequestMapping(value="/login",method=RequestMethod.POST)
     @ResponseBody
     public String login(String data) throws ParseException, IOException {
@@ -56,6 +63,13 @@ public class UserController {
         return mapper.writeValueAsString(map);
     }
     
+    /**
+     * 手机端自动登录验证
+     * @param data
+     * @return
+     * @throws ParseException
+     * @throws IOException
+     */
     @RequestMapping(value="/autologin",method=RequestMethod.POST)
     @ResponseBody
     public String autologin(String data) throws ParseException, IOException {
